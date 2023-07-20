@@ -1,10 +1,11 @@
 import { useSelector } from 'react-redux';
 import { ContactListItems } from '../ContactListItems/ContactListItems';
 import * as s from './ContactList.styled';
+import { selectUsers, selectFilter } from 'redux/selectors';
 
 export const ContactList = () => {
-  const users = useSelector(state => state.contactsUser.contacts);
-  const filter = useSelector(state => state.filterUser.filter);
+  const users = useSelector(selectUsers);
+  const filter = useSelector(selectFilter);
 
   const searchUserBook = () => {
     return users.filter(contact =>

@@ -3,11 +3,10 @@ import ContactForm from 'components/ContactForm/ContactForm';
 import { ContactList } from 'components/ContactList/ContactList';
 import { Filter } from 'components/Filter/Filter';
 import * as s from './App.styled';
+import { selectUsersQuantity } from 'redux/selectors';
 
 const App = () => {
-  const usersQuantity = useSelector(
-    state => state.contactsUser.contacts.length
-  );
+  const usersQuantity = useSelector(selectUsersQuantity);
 
   return (
     <s.Container>

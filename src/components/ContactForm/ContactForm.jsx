@@ -2,12 +2,13 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useState } from 'react';
 import * as s from './ContactForm.styled';
 import { addUser } from 'redux/contactsSlise';
+import { selectUsers } from 'redux/selectors';
 
 export default function ContactForm() {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
   const dispatch = useDispatch();
-  const users = useSelector(state => state.contactsUser.contacts);
+  const users = useSelector(selectUsers);
 
   const handleCange = evt => {
     const { name, value } = evt.target;
