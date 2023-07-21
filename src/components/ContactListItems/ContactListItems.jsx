@@ -1,7 +1,8 @@
 import { useDispatch } from 'react-redux';
 import * as s from './ContactListItems.styled';
 import PropTypes from 'prop-types';
-import { deleteUser } from 'redux/contactsSlise';
+import { deleteContact } from 'redux/operations';
+// import { deleteUser } from 'redux/contactsSlise';
 
 export const ContactListItems = ({ user: { name, number, id } }) => {
   const dispatch = useDispatch();
@@ -10,7 +11,7 @@ export const ContactListItems = ({ user: { name, number, id } }) => {
     <>
       <s.Name>{name}:</s.Name>
       <s.Number>{number}</s.Number>
-      <s.Button onClick={() => dispatch(deleteUser(id))}>Delete</s.Button>
+      <s.Button onClick={() => dispatch(deleteContact(id))}>Delete</s.Button>
     </>
   );
 };
@@ -22,3 +23,5 @@ ContactListItems.propTypes = {
     id: PropTypes.string.isRequired,
   }).isRequired,
 };
+
+{/* <s.Button onClick={() => dispatch(deleteUser(id))}>Delete</s.Button> */}

@@ -1,7 +1,8 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useState } from 'react';
 import * as s from './ContactForm.styled';
-import { addUser } from 'redux/contactsSlise';
+// import { addUser } from 'redux/contactsSlise';
+import { addContact } from 'redux/operations';
 import { selectUsers } from 'redux/selectors';
 
 export default function ContactForm() {
@@ -40,7 +41,8 @@ export default function ContactForm() {
       return;
     }
 
-    dispatch(addUser({ name, number }));
+    dispatch(addContact({ name, number }));
+    // dispatch(addUser({ name, number }));
     reset();
   };
 
