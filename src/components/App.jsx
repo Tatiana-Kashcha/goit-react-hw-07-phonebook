@@ -1,12 +1,26 @@
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { useEffect } from 'react';
 import ContactForm from 'components/ContactForm/ContactForm';
 import { ContactList } from 'components/ContactList/ContactList';
 import { Filter } from 'components/Filter/Filter';
+import {
+  selectUsersQuantity,
+  selectError,
+  selectIsLoading,
+} from 'redux/selectors';
+import { fetchContacts } from 'redux/operations';
 import * as s from './App.styled';
-import { selectUsersQuantity } from 'redux/selectors';
 
 const App = () => {
   const usersQuantity = useSelector(selectUsersQuantity);
+
+  const dispatch = useDispatch();
+  const isLoading = useSelector(selectIsLoading);
+  const error = useSelector(selectError);
+
+  useEffect(() => {
+    dispatch(fetchContacts());
+  }, [dispatch]);
 
   return (
     <s.Container>
