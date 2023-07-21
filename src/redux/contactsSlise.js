@@ -1,6 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { fetchContacts, addContact, deleteContact } from './operations';
-// import { nanoid } from 'nanoid';
 
 const handlePending = state => {
   state.contacts.isLoading = true;
@@ -55,28 +54,3 @@ export const contactsSlice = createSlice({
 });
 
 export const contactsReducer = contactsSlice.reducer;
-
-// export const { addUser, deleteUser } = contactsSlice.actions;
-
-// reducers: {
-//   addUser: {
-//     reducer(state, action) {
-//       state.contacts.items.push(action.payload);
-//     },
-//     prepare(data) {
-//       return {
-//         payload: {
-//           id: nanoid(),
-//           ...data,
-//         },
-//       };
-//     },
-//   },
-//   deleteUser(state, action) {
-//     const index = state.contacts.items.findIndex(
-//       user => user.id === action.payload
-//     );
-//     state.contacts.items.splice(index, 1);
-//   },
-// },
-// });

@@ -2,7 +2,6 @@ import { useDispatch } from 'react-redux';
 import * as s from './ContactListItems.styled';
 import PropTypes from 'prop-types';
 import { deleteContact } from 'redux/operations';
-// import { deleteUser } from 'redux/contactsSlise';
 
 export const ContactListItems = ({ user: { name, number, id } }) => {
   const dispatch = useDispatch();
@@ -23,5 +22,3 @@ ContactListItems.propTypes = {
     id: PropTypes.string.isRequired,
   }).isRequired,
 };
-
-{/* <s.Button onClick={() => dispatch(deleteUser(id))}>Delete</s.Button> */}

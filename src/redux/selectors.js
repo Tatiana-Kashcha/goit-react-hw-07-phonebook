@@ -19,14 +19,3 @@ export const selectVisibleUsers = createSelector(
     );
   }
 );
-
-// const users = useSelector(selectUsers);
-// const filter = useSelector(selectFilter);
-
-// const searchUserBook = () => {
-//   return users.filter(contact =>
-//     contact.name.toLowerCase().includes(filter.toLowerCase())
-//   );
-// };
-
-// const searchUser = searchUserBook();
