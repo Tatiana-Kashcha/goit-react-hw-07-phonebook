@@ -10,6 +10,7 @@ import {
 } from 'redux/selectors';
 import { fetchContacts } from 'redux/operations';
 import * as s from './App.styled';
+import { Loading } from 'notiflix/build/notiflix-loading-aio';
 
 const App = () => {
   const usersQuantity = useSelector(selectUsersQuantity);
@@ -26,6 +27,8 @@ const App = () => {
     <s.Container>
       <h1>Phonebook</h1>
       <ContactForm />
+      {isLoading && !error && Loading.arrows()}
+      {!isLoading && Loading.remove()}
       {usersQuantity > 0 && (
         <>
           <h2>Contacts</h2>
