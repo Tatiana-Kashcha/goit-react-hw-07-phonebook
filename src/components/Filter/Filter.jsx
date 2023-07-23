@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
 import * as s from './Filter.styled';
-import { handleCangeFilter } from 'redux/filterSlise';
+import { handleCangeFilter } from 'redux/filterSlice';
 import { selectFilter } from 'redux/selectors';
 
 export const Filter = () => {
